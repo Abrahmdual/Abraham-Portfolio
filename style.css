@@ -146,8 +146,8 @@ p {
     padding: 13px 23px;
     border: 1px solid #3b82f6;
     border-radius: 8px;
-    background: #3b82f6;
-    color: #ffffff;
+    background: #07152c;
+    color: #edeef4;
     font-weight: 700;
     transition:
         transform 0.25s ease,
@@ -155,17 +155,17 @@ p {
 }
 
 .btn:hover {
-    background: #2563eb;
+    background: #3023e8;
     transform: translateY(-3px);
 }
 
 .btn-outline {
     background: transparent;
-    color: #93c5fd;
+    color: #e4e8ed;
 }
 
 .btn-outline:hover {
-    background: #172554;
+    background: #1841d5;
 }
 
 .availability {
@@ -510,5 +510,28 @@ footer p {
 
     .profile-frame {
         max-width: 300px;
+    }
+}
+
+/* ===== TYPING ANIMATION ===== */
+
+#typing-text {
+    color: #60a5fa;
+}
+
+.typing-cursor {
+    display: inline-block;
+    color: #60a5fa;
+    margin-left: 3px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
     }
 }
