@@ -52,3 +52,35 @@ if (typingElement) {
 
     typeEffect();
 }
+
+/* ===== SCROLL REVEAL ANIMATION ===== */
+
+const revealSections = document.querySelectorAll(
+    "#about, #skills, #projects"
+);
+
+if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+    revealSections.forEach((section) => {
+        section.classList.add("reveal");
+        revealObserver.observe(section);
+    });
+
+} else {
+    revealSections.forEach((section) => {
+        section.classList.add("visible");
+    });
+}
