@@ -84,3 +84,26 @@ if ("IntersectionObserver" in window) {
         section.classList.add("visible");
     });
 }
+
+/* ===== DARK AND LIGHT MODE TOGGLE ===== */
+
+const themeButton = document.getElementById("theme-toggle");
+
+if (themeButton) {
+
+    themeButton.addEventListener("click", function () {
+
+        document.body.classList.toggle("light");
+
+        const lightMode = document.body.classList.contains("light");
+
+        themeButton.textContent = lightMode ? "🌙" : "☀️";
+
+        themeButton.setAttribute(
+            "aria-label",
+            lightMode ? "Switch to dark mode" : "Switch to light mode"
+        );
+
+    });
+
+}

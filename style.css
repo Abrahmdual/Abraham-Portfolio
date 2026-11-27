@@ -717,3 +717,124 @@ footer p {
         font-size: 21px;
     }
 }
+
+/* ===== CONTACT SECTION ===== */
+
+.contact-card {
+    max-width: 700px;
+    margin: 40px auto 0;
+    padding: 40px 30px;
+    text-align: center;
+    background: var(--card, #172033);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    border-radius: 18px;
+}
+
+.contact-card h3 {
+    color: var(--text, #ffffff);
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.contact-card p {
+    color: var(--muted, #aab4c5);
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 13px 25px;
+    background: #3b82f6;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s ease,
+                transform 0.3s ease;
+}
+
+.contact-button:hover {
+    background: #2563eb;
+    transform: translateY(-3px);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.social-links a {
+    color: #60a5fa;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #93c5fd;
+}
+
+@media (max-width: 600px) {
+    .contact-card {
+        padding: 28px 18px;
+    }
+
+    .contact-card h3 {
+        font-size: 21px;
+    }
+}
+
+/* ===== DARK AND LIGHT MODE ===== */
+
+:root {
+    --bg: #0f172a;
+    --text: #f8fafc;
+    --card: #172033;
+    --muted: #aab4c5;
+    --accent: #60a5fa;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.light {
+    --bg: #f8fafc;
+    --text: #172033;
+    --card: #ffffff;
+    --muted: #475569;
+    --accent: #2563eb;
+}
+
+.theme-toggle {
+    border: 1px solid var(--accent);
+    background: var(--card);
+    color: var(--text);
+    padding: 9px 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Apply theme colors to common elements */
+
+body,
+section,
+.portfolio-project-card,
+.education-card,
+.contact-card {
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease;
+}
